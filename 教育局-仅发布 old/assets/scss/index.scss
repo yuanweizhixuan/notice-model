@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.16rem;
+    color: #333;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+#primary-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    // 发布页面和 通知页面公共内容
+    .notice-wrapper, .notice-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 11.36rem;
+        min-height: max-content;
+        background-color: #fff;
+        border-radius: 0.1rem;
+        overflow: hidden;
+
+        .notice-header {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 0.4rem;
+            background-color: #FFBD39;
+            line-height: 0.4rem;
+            user-select: none;
+
+            .notice-header-txt {
+                color: #FFFFFF;
+            }
+
+            .common-notice-btn {
+                padding: 0.08rem;
+                position: absolute;
+                right: 0.3rem;
+                color: #FFFFFF;
+                font-style: normal;
+                cursor: pointer;
+                height: .4rem;
+
+            }
+        }
+    }
+
+    //发布页
+    .notice-wrapper {
+        .notice-body {
+            padding: 0 0.3rem 0.2rem 0.3rem;
+            width: 100%;
+
+            .notice-category {
+                padding: 0 0.14rem;
+                display: flex;
+                justify-content: space-between;
+                height: 0.6rem;
+                user-select: none;
+
+                .notice-category-left {
+                    cursor: pointer;
+
+                    .nav-item {
+                        padding: 0.15rem 0 0.09rem 0;
+                        display: inline-block;
+                        border-bottom: 0.02rem solid transparent;
+
+                        &:nth-child(2) {
+                            margin-left: 0.18rem
+                        }
+                    }
+
+                    .active-nav {
+                        border-bottom: 0.02rem solid #FA851C;
+                        color: #FA851C;
+                    }
+                }
+            }
+
+            .notice-container {
+                background-color: #FFFFFF;
+                border-radius: 0.1rem;
+                box-shadow: 0 0 0.1rem rgba(122, 127, 135, 0.2);
+
+                //发布页
+                .notice-publish {
+
+                    padding: 0.17rem 0.36rem 0.1rem 0.36rem;
+                    font-size: 0.14rem;
+
+                    .publish-title {
+                        .publish-title-txt {
+                            color: #333;
+                            font-size: 0.14rem;
+                        }
+
+                        .publish-title-ipt {
+                            margin-left: 0.18rem;
+                            padding: 0.06rem 0.14rem;
+                            width: 2.76rem;
+                            height: 0.28rem;
+                            outline: none;
+                            color: #6A6A6A;
+                            border: 1px solid #D5D5D5;
+                            border-radius: 0.04rem;
+
+                            &::placeholder {
+                                color: #6A6A6A;
+                            }
+                        }
+                    }
+
+                    .notification-group {
+                        margin-top: 0.3rem;
+                        position: relative;
+
+                        .notification-group-title {
+                        }
+
+                        .notification-group-wrapper {
+                            margin: 0.2rem 2.2rem 0 0.42rem;
+                            display: flex;
+                            flex-wrap: wrap;
+                            height: 1.08rem;
+                            overflow: hidden;
+                            overflow-y: auto;
+
+                            .group-item {
+                                flex: 0 0 25%;
+                                margin-bottom: 0.15rem;
+
+                                .group-item-checkbox {
+                                    margin-right: 0.04rem;
+                                }
+
+                                .group-item-txt {
+                                    user-select: none;
+                                    cursor: pointer;
+                                }
+
+                                .editor-icon {
+                                    display: inline-block;
+                                    cursor: pointer;
+                                    padding:0.02rem 0.09rem;
+                                }
+                            }
+                        }
+
+                        .toggle-unfold {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            color: #2582FC;
+                        }
+                    }
+
+                    .publish-content-wrapper {
+                        margin-top: 0.3rem;
+                        display: flex;
+
+                        .publish-content-txt {
+                            font-size: 0.14rem;
+                        }
+
+                        .publish-content-ipt {
+                            margin-left: 0.14rem;
+                            resize: none;
+                            border-radius: 0.04rem;
+                            width: 9.54rem;
+                            height: 2.67rem;
+                            border: 1px solid #D5D5D5;
+                            outline: none;
+                            padding: 0.1rem 0.15rem;
+                            color: #555;
+                            line-height: 0.18rem;
+                        }
+                    }
+
+                    .publish-btn-wrapper {
+                        padding: 0.17rem 0 0.11rem 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                //发布历史
+                .notice-publish-history {
+                    display: none; // 默认隐藏
+
+                    //历史记录列表
+                    .notice-u-list {
+                        padding: 0.3rem 0.37rem;
+                        min-height: 4.4rem;
+
+                        .notice-u-item {
+                            position: relative;
+                            padding: 0.09rem 0.04rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-bottom: 0.01rem solid #FFD194;
+                            font-size: 0.14rem;
+
+                            .notice-title, .notice-datetime {
+                                flex: 1;
+                                color: #6A6A6A;
+                                height: 100%;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                font-size: 0.14rem;
+                            }
+
+                            .notice-title {
+                                padding-right: 0.2rem;
+
+                                .notice-title-txt {
+                                    color: #333;
+                                }
+                            }
+
+                            .notice-datetime {
+                                color: #C2C2C2;
+                            }
+
+                            .notice-controller {
+                                display: flex;
+                                height: 100%;
+                                min-width: 1rem;
+                                user-select: none;
+                                font-size: 0.14rem;
+
+                                .controller-item {
+                                    padding: 0 0.1rem;
+
+                                    span {
+                                        color: #2582FC;
+                                    }
+
+                                    svg {
+                                        width: 14px;
+                                        height: 14px;
+                                        color: #EF2533;
+                                    }
+
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+
+                    .pagination-wrapper {
+                        padding: 0.09rem;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    //发布的内容详情
+    .notice-content {
+        display: none;
+        height: 6.4rem;
+
+        .detail-container {
+            display: flex;
+            flex-direction: column;
+            height: 6rem;
+            padding: 0.1rem 0.3rem;
+            overflow-y: auto;
+
+            .notice-detail-item {
+                height: 0.3rem;
+                line-height: .3rem;
+                color: #8c8c8c;
+                font-size: 0.14rem;
+            }
+
+            .notice-detail-title {
+                text-align: center;
+                font-size: 0.18rem;
+                color: #333;
+            }
+
+            .notice-content-detail {
+                flex: 1;
+                padding: 0.1rem 0;
+                overflow-y: scroll;
+                line-height: 1.5;
+                text-indent: 2em;
+            }
+
+        }
+    }
+
+}
+
+
+//没有数据时候的样式
+.no-notice {
+    text-align: center;
+    color: #999;
+}
+
+.button {
+    color: #fff;
+    background-color: #FA851C;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn {
+    padding: 0.15rem 0.6rem 0.12rem 0.6rem;
+    font-size: 0.18rem;
+    border-radius: 0.05rem;
+
+}
+
+.primary-btn-min {
+    width: 1.17rem;
+    height: 0.33rem;
+    background: #FA851C;
+    border-radius: 0.05rem;
+}
+
+.tips-tool-box-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0.14rem;
+
+    .tips-tool-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 3.73rem;
+        //height: 2.73rem;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 0.05rem;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        .tips-tool-box-header {
+            height: 0.35rem;
+            width: 100%;
+            background-color: #FFBD39;
+            text-align: center;
+            line-height: 0.35rem;
+            color: #fff;
+
+            .tips-tool-box-close {
+                padding: 0.06rem 0.09rem 0.09rem 0.09rem;
+                position: absolute;
+                right: 0.1rem;
+                color: #FFFFFF;
+                font-style: normal;
+                cursor: pointer;
+                height: .35rem;
+
+                svg {
+                    width: 0.20rem;
+                    height: 0.20rem;
+                }
+            }
+        }
+
+        .tips-tool-body {
+            padding: 0.16rem 0.18rem;
+
+            .custom-group-name {
+                .custom-group-name-ipt {
+                    margin-left: 0.2rem;
+                    padding: 0.06rem 0.14rem;
+                    width: 1.93rem;
+                    height: 0.28rem;
+                    outline: none;
+                    color: #6A6A6A;
+                    border: 0.01rem solid #D5D5D5;
+                    border-radius: 0.04rem;
+                }
+            }
+
+            .custom-group-wrapper {
+                margin-top: 0.3rem;
+                display: flex;
+
+                .custom-group-wrapper-title {
+                    width: 0.6rem;
+                }
+
+                .custom-group-list {
+                    flex: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: 0.11rem;
+                    height: 1.3rem;
+                    overflow-y: auto;
+
+                    .custom-group-item {
+
+                        flex: 50%;
+                        margin-bottom: 0.16rem;
+                        padding-right: 0.05rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        .custom-group-item-txt {
+                            margin-left: 0.04rem;
+                        }
+                    }
+                }
+            }
+
+            .button-wrapper {
+                margin-top: 0.22rem;
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+    }
+}

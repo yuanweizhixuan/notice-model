@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh_CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!--禁止移动端缩放-->
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=0, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<!--优先使用webkit内核渲染-->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.js"></script>
+	<script src="./assets/js/index.js"></script>
+	<script src="./assets/js/1920screen_self-adaption.js"></script>
+	<link rel="stylesheet" href="./assets/scss/common-notice-style.css"/>
+	<link rel="stylesheet" href="./assets/scss/switch.css"/>
+	<link rel="stylesheet" href="./assets/scss/pagination.css"/>
+	<link rel="stylesheet" href="./assets/scss/index.css"/>
+	<title>校端</title>
+
+</head>
+
+<body>
+<button class="test">显示内容</button>
+<div class="common-primary-mask notice-list-box">
+	<div class="common-container">
+		<div class="container-header">
+			<span class="header-title-txt">消息</span>
+			<i class="x-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="container-body">
+			<div class="common-category">
+				<div class="left-box">
+					<span class="category-item active-category">全部信息</span>
+					<span class="category-item">教育局消息</span>
+				</div>
+				<div class="right-box">
+					<label onclick="switchClick(this)" class="x-switch" data-value="true"></label>
+					<span class="unread-message-only">仅未读消息</span>
+					<span class="set-all-read">全部设为已读</span>
+				</div>
+			</div>
+			<div class="body-content">
+				<div class="common-u-list">
+					<div class="u-item">
+						<i class="have-read-dot"></i>
+						<div class="item-title">
+							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+						</div>
+						<div class="item-datetime">2021.11.12 10:59:59</div>
+						<div class="item-controller">
+							<span class="controller-item notice-check-btn">查看</span>
+							<div class="controller-item controller-item-more">
+								<span>更多</span>
+								<div class="more-control">
+									<div class="more-ctrl-item set-as-read">设为已读</div>
+									<div class="more-ctrl-item delete-notice">删除</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="u-item">
+						<i class="have-read-dot"></i>
+						<div class="item-title">
+							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+						</div>
+						<div class="item-datetime">2021.11.12 10:59:59</div>
+						<div class="item-controller">
+							<span class="controller-item notice-check-btn">查看</span>
+							<div class="controller-item controller-item-more">
+								<span>更多</span>
+								<div class="more-control">
+									<div class="more-ctrl-item set-as-read">设为已读</div>
+									<div class="more-ctrl-item delete-notice">删除</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="u-item">
+						<i class="have-read-dot"></i>
+						<div class="item-title">
+							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+						</div>
+						<div class="item-datetime">2021.11.12 10:59:59</div>
+						<div class="item-controller">
+							<span class="controller-item notice-check-btn">查看</span>
+							<div class="controller-item controller-item-more">
+								<span>更多</span>
+								<div class="more-control">
+									<div class="more-ctrl-item set-as-read">设为已读</div>
+									<div class="more-ctrl-item delete-notice">删除</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pagination-wrapper">
+					<div class="m-pagination" data-pageTotal="12" data-pageIndex="1" data-pageSize="10"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="common-primary-mask notice-detail-box">
+	<div class="common-container">
+		<div class="container-header">
+			<span class="header-title-txt">消息</span>
+			<i class="x-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="container-body">
+			<div class="detail-container">
+				<div class="content-wrapper">
+					<p class="notice-detail-item notice-detail-title">通知标题</p>
+					<p class="notice-detail-item notice-detail-datetime">通知时间：2021.11.23 23:59:59</p>
+					<p class="notice-detail-item notice-detail-department">通知单位：沃科教育局</p>
+					<div class="notice-content-detail">
+						消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+</body>
+
+</html>

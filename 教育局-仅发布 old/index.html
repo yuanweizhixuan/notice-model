@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!--禁止移动端缩放-->
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=0, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<!--优先使用webkit内核渲染-->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.0/jquery.js"></script>
+	<script src="./assets/js/index.js"></script>
+	<script src="./assets/js/1920screen_self-adaption.js"></script>
+	<link rel="stylesheet" href="./assets/scss/switch.css"/>
+	<link rel="stylesheet" href="./assets/scss/pagination.css"/>
+	<link rel="stylesheet" href="./assets/scss/index.css"/>
+	<link rel="stylesheet" href="./assets/scss/checkbox.css"/>
+	<title>教育局</title>
+</head>
+<body>
+<div id="primary-mask">
+	<div class="notice-wrapper">
+		<div class="notice-header">
+			<span class="notice-header-txt">发布通知</span>
+			<i class="common-notice-btn notice-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="notice-body">
+			<div class="notice-category">
+				<nav class="notice-category-left">
+					<div class="nav-item active-nav">发布通知</div>
+					<div class="nav-item ">历史记录</div>
+				</nav>
+			</div>
+			<div class="notice-container">
+				<div class="notice-publish">
+					<div class="publish-title">
+						<span class="publish-title-txt">标题</span>
+						<input class=" publish-title-ipt" type="text" placeholder="请输入标题...">
+					</div>
+					<div class="notification-group">
+						<div class="notification-group-title">通知对象</div>
+						<div class="notification-group-wrapper">
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">全选</span>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							
+						</div>
+						<div class="toggle-unfold">收起</div>
+					</div>
+					<div class="publish-content-wrapper">
+						<div class="publish-content-txt">内容</div>
+						<textarea name="" id="" cols="30" rows="10" class="publish-content-ipt"></textarea>
+					</div>
+					<div class="publish-btn-wrapper">
+						<button class="button primary-btn">
+							<span>发布</span>
+						</button>
+					</div>
+				</div>
+				<div class="notice-publish-history">
+					<ul class="notice-u-list"></ul>
+					<div class="pagination-wrapper">
+						<div class="m-pagination" data-pageTotal="10" data-pageIndex="1" data-pageSize="10"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="notice-content">
+		<div class="notice-header">
+			<span class="notice-header-txt">消息中心</span>
+			<i class="common-notice-btn notice-content-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="detail-container">
+			<div class="content-wrapper"></div>
+			<p class="notice-detail-item notice-detail-title">通知标题</p>
+			<p class="notice-detail-item notice-detail-datetime">通知时间：2021.11.23 23:59:59</p>
+			<p class="notice-detail-item notice-detail-department">通知单位：沃科教育局</p>
+			<div class="notice-content-detail">
+				消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tips-tool-box-wrapper">
+	<div class="tips-tool-box">
+		<div class="tips-tool-box-header">
+			自定义学校群组
+			<i class="tips-tool-box-close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="tips-tool-body">
+			<p class="custom-group-name">
+				<span>群组名</span>
+				<input type="text" class="custom-group-name-ipt" placeholder="请输入自定义群组名称">
+			</p>
+			<div class="custom-group-wrapper">
+				<p class="custom-group-wrapper-title">选择对象</p>
+				<div class="custom-group-list">
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+				</div>
+			</div>
+			<div class="button-wrapper">
+				<button class="button primary-btn-min custom-check-btn">确认</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

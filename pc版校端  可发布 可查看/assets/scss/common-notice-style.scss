@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+body {
+    font-size: 0.16rem;
+    color: #333;
+}
+
+.common-primary-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .common-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 11.36rem;
+        font-size: 0.16rem;
+        background-color: #fff;
+        border-radius: 0.1rem;
+        overflow: hidden;
+
+        .container-header {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            height: 0.4rem;
+            color: #fff;
+            background-color: #ffbd39;
+            text-align: center;
+
+            .x-close-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0.15rem;
+                cursor: pointer;
+
+                svg {
+                    width: 0.24rem;
+                    height: 0.24rem;
+                    min-height: 0.12rem;
+                    min-width: 0.12rem;
+                }
+            }
+        }
+
+        .container-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0.15rem 0.3rem 0.26rem 0.3rem;
+            //background-color: deepskyblue;
+            .common-category {
+                display: flex;
+                justify-content: space-between;
+                height: 0.6rem;
+                user-select: none;
+
+                .left-box {
+                    margin-left: 0.18rem;
+                    font-size: 0.18rem;
+
+                    .category-item {
+                        padding-bottom: 0.09rem;
+                        border-bottom: 2px solid transparent;
+                        cursor: pointer;
+                        //第二个开始每一个都有左边距
+                        &:nth-child(n + 1) {
+                            margin-left: 0.18rem;
+                        }
+                    }
+
+                    .active-category {
+                        border-bottom: 2px solid #fa851c;
+
+                    }
+                }
+
+                .right-box {
+                    display: flex;
+                    align-items: center;
+
+                    .unread-message-only {
+                        margin-left: 0.07rem;
+                        cursor: pointer;
+
+                    }
+
+                    .set-all-read {
+                        margin-left: 0.25rem;
+                        cursor: pointer;
+
+                        color: #FA851C;
+                    }
+                }
+            }
+
+            .body-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 0rem 0.1rem rgba(122, 127, 135, 0.2);
+            }
+        }
+    }
+}
+
+.common-no-notice {
+    text-align: center;
+    color: #999;
+}

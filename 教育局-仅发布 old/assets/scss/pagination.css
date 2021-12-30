@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.m-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.14rem;
+  user-select: none; }
+  .m-pagination .m-p-ipt {
+    padding: 0.08rem 0.06rem;
+    width: 0.42rem;
+    height: 0.28rem;
+    color: #B2B2B2;
+    border: 0.01rem solid #D5D5D5;
+    border-radius: 0.04rem;
+    font-size: 0.12rem;
+    outline: none; }
+    .m-pagination .m-p-ipt::placeholder {
+      font-size: 0.12rem; }
+  .m-pagination .m-p-go {
+    margin-left: 0.09rem;
+    color: #2582FC;
+    font-size: 0.14rem; }
+  .m-pagination .m-p-prev {
+    margin-left: 0.4rem; }
+  .m-pagination .page-num {
+    padding: 0 0.05rem;
+    height: 0.20rem;
+    min-width: 0.20rem;
+    text-align: center;
+    font-size: 0.14rem; }
+  .m-pagination .current-page {
+    background-color: #FA851C;
+    border-radius: 0.38rem;
+    color: #fff;
+    font-size: 0.14rem; }
+  .m-pagination .m-pagination-item {
+    font-size: 0.14rem;
+    margin-left: 0.15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; }
+
+/*# sourceMappingURL=pagination.css.map */

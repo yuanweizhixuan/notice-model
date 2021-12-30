@@ -1,0 +1,111 @@
+.notice-list-box {
+  display: none; }
+  .notice-list-box .common-u-list {
+    padding: 0.31rem 0.2rem 0 0.2rem;
+    flex: 1;
+    min-height: 5.2rem; }
+    .notice-list-box .common-u-list .u-item {
+      margin: 0 0.05rem 0 0.15rem;
+      border-bottom: 1px solid #FFD194;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #6a6a6a;
+      font-size: 0.14rem; }
+      .notice-list-box .common-u-list .u-item:nth-child(n+2) {
+        margin-top: 0.15rem; }
+      .notice-list-box .common-u-list .u-item .have-read-dot {
+        display: inline-block;
+        position: absolute;
+        left: -0.08rem;
+        top: 40%;
+        transformt: translateY(-50%);
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        background-color: #fa851c; }
+      .notice-list-box .common-u-list .u-item .item-title {
+        flex: 1;
+        padding: 0 0.2rem 0 0.04rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .notice-list-box .common-u-list .u-item .item-datetime {
+        flex: 1;
+        padding: 0 0.2rem 0 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .notice-list-box .common-u-list .u-item .item-controller {
+        width: max-content;
+        color: #2582FC;
+        cursor: pointer;
+        user-select: none; }
+        .notice-list-box .common-u-list .u-item .item-controller .controller-item {
+          display: inline-block;
+          margin-left: 0.2rem; }
+        .notice-list-box .common-u-list .u-item .item-controller .controller-item-more {
+          position: relative;
+          padding: 0.07rem 0.07rem; }
+          .notice-list-box .common-u-list .u-item .item-controller .controller-item-more:hover > .more-control {
+            display: block; }
+          .notice-list-box .common-u-list .u-item .item-controller .controller-item-more .more-control {
+            display: none;
+            position: absolute;
+            right: 100%;
+            top: -0.07rem;
+            z-index: 999;
+            padding: 0rem 0.1rem;
+            width: max-content;
+            background-color: #fff;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+            border-radius: 0.05rem; }
+            .notice-list-box .common-u-list .u-item .item-controller .controller-item-more .more-control::after {
+              position: absolute;
+              right: -0.04rem;
+              top: 0.17rem;
+              content: '';
+              width: 0.07rem;
+              height: 0.07rem;
+              background-color: #fff;
+              border-right: 0.01rem solid rgba(0, 0, 0, 0.1);
+              border-bottom: 0.01rem solid rgba(0, 0, 0, 0.1);
+              transform: rotate(-45deg); }
+            .notice-list-box .common-u-list .u-item .item-controller .controller-item-more .more-control .more-ctrl-item {
+              padding: 0.12rem 0.14rem;
+              text-align: center;
+              color: #6A6A6A; }
+              .notice-list-box .common-u-list .u-item .item-controller .controller-item-more .more-control .more-ctrl-item:hover {
+                color: #2582FC; }
+              .notice-list-box .common-u-list .u-item .item-controller .controller-item-more .more-control .more-ctrl-item:nth-child(1) {
+                border-bottom: 1px solid #B2B2B2; }
+  .notice-list-box .pagination-wrapper {
+    padding: 0.24rem 0 0.09rem 0; }
+
+.notice-detail-box {
+  display: none; }
+  .notice-detail-box .detail-container {
+    display: flex;
+    flex-direction: column;
+    height: 6rem;
+    padding: 0.1rem 0.3rem;
+    overflow-y: auto;
+    height: 6.4rem; }
+    .notice-detail-box .detail-container .content-wrapper {
+      height: 100%; }
+      .notice-detail-box .detail-container .content-wrapper .notice-detail-item {
+        height: 0.3rem;
+        line-height: .3rem;
+        color: #8c8c8c;
+        font-size: 0.14rem; }
+      .notice-detail-box .detail-container .content-wrapper .notice-detail-title {
+        text-align: center;
+        font-size: 0.18rem;
+        color: #333; }
+      .notice-detail-box .detail-container .content-wrapper .notice-content-detail {
+        flex: 1;
+        padding: 0.1rem 0;
+        line-height: 1.5;
+        text-indent: 2em; }
+
+/*# sourceMappingURL=index.css.map */
