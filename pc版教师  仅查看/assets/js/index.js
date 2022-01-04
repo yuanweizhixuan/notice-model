@@ -58,7 +58,7 @@ $(function () {
 	 */
 	function handleSetAsReadBtnClick() {
 		$(".common-u-list").on("click", ".set-as-read", function () {
-			console.log($(this).parents(".u-item"));
+			console.log($(this).parents(".u-item").children(".have-read-dot").hide());
 		})
 	}
 

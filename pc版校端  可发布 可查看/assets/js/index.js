@@ -1,24 +1,39 @@
 $(function () {
 
+
+	//  测试用
 	$(".test").click(function () {
 		$(".notice-list-box").show()
 	})
+	$(".test1").click(function () {
+		$(".notice-publish-box").show()
+	})
+
+	//  测试用
 
 	/**  switch */
-	let xSwitchArr = $(".x-switch");
+	const xSwitchArr = $(".x-switch");
 
 	/** 分页信息 */
 	const paginationEl = $(".m-pagination")
+	const dottedStr = "..." // 生成分页中的点
 	let pageNumStr = "" // 生成分页具体页数内容
-	let dottedStr = "..." // 生成分页中的点
 	let paginationStr = '' // 生成分页的整个item
 
-	/**  通知功能 */
+	/**  dialog 弹出框 */
 	const categoryList = $(".left-box>.category-item")
+	const customCloseBtn = $(".tips-tool-box-close")
 
+
+	/**   customCloseBtn */
+	handleCustomCloseBtnClick()
+	function handleCustomCloseBtnClick() {
+		customCloseBtn.on("click", function () {
+			$(this).parents(".tips-tool-box-wrapper").hide()
+		})
+	}
 
 	/****   公共的dialog 方法 开始 */
-
 	function initCommonDialogMethods() {
 		handleDialogCloseBtnClick()
 	}
@@ -27,11 +42,13 @@ $(function () {
 		$(".x-close-btn").on("click", function () {
 			$(this).parents(".common-primary-mask").hide();
 		})
-
 	}
 
 	/****   公共的dialog 方法  结束*/
 
+	/**
+	 *
+	 */
 	function init() {
 		renderSwitch();
 		initPagination()
@@ -106,7 +123,15 @@ $(function () {
 	 */
 	function handleCategoryItemClick() {
 		categoryList.on("click", function () {
+			let index = $(this).index()
 			$(this).addClass("active-category").siblings().removeClass("active-category")
+			$(this).parents(".container-body").children(".body-content").children().eq(index).show().siblings().hide()
+			// 设置通知标题
+			if ($(this).text() === '发布通知') {
+				$(this).parents(".container-body").siblings(".container-header").children(".header-title-txt").text("发布通知")
+			} else if ($(this).text() === '历史记录') {
+				$(this).parents(".container-body").siblings(".container-header").children(".header-title-txt").text("消息")
+			}
 		})
 	}
 

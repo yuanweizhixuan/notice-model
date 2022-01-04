@@ -16,12 +16,15 @@
 	<link rel="stylesheet" href="./assets/scss/switch.css"/>
 	<link rel="stylesheet" href="./assets/scss/pagination.css"/>
 	<link rel="stylesheet" href="./assets/scss/index.css"/>
+	<link rel="stylesheet" href="./assets/scss/checkbox.css"/>
 	<title>校端</title>
 
 </head>
 
 <body>
-<button class="test">显示内容</button>
+<button class="test">消息列表</button>
+<button class="test1">发布消息</button>
+
 <div class="common-primary-mask notice-list-box">
 	<div class="common-container">
 		<div class="container-header">
@@ -48,68 +51,239 @@
 				</div>
 			</div>
 			<div class="body-content">
-				<div class="common-u-list">
-					<div class="u-item">
-						<i class="have-read-dot"></i>
-						<div class="item-title">
-							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+				<div class="common-list">
+					<div class="common-u-list">
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									<span>更多</span>
+									<div class="more-control">
+										<div class="more-ctrl-item set-as-read">设为已读</div>
+										<div class="more-ctrl-item delete-notice">删除</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="item-datetime">2021.11.12 10:59:59</div>
-						<div class="item-controller">
-							<span class="controller-item notice-check-btn">查看</span>
-							<div class="controller-item controller-item-more">
-								<span>更多</span>
-								<div class="more-control">
-									<div class="more-ctrl-item set-as-read">设为已读</div>
-									<div class="more-ctrl-item delete-notice">删除</div>
+						
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									<span>更多</span>
+									<div class="more-control">
+										<div class="more-ctrl-item set-as-read">设为已读</div>
+										<div class="more-ctrl-item delete-notice">删除</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									<span>更多</span>
+									<div class="more-control">
+										<div class="more-ctrl-item set-as-read">设为已读</div>
+										<div class="more-ctrl-item delete-notice">删除</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
-					<div class="u-item">
-						<i class="have-read-dot"></i>
-						<div class="item-title">
-							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
-						</div>
-						<div class="item-datetime">2021.11.12 10:59:59</div>
-						<div class="item-controller">
-							<span class="controller-item notice-check-btn">查看</span>
-							<div class="controller-item controller-item-more">
-								<span>更多</span>
-								<div class="more-control">
-									<div class="more-ctrl-item set-as-read">设为已读</div>
-									<div class="more-ctrl-item delete-notice">删除</div>
-								</div>
-							</div>
-						</div>
+					<div class="pagination-wrapper">
+						<div class="m-pagination" data-pageTotal="12" data-pageIndex="1" data-pageSize="10"></div>
 					</div>
-					
-					<div class="u-item">
-						<i class="have-read-dot"></i>
-						<div class="item-title">
-							消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
-						</div>
-						<div class="item-datetime">2021.11.12 10:59:59</div>
-						<div class="item-controller">
-							<span class="controller-item notice-check-btn">查看</span>
-							<div class="controller-item controller-item-more">
-								<span>更多</span>
-								<div class="more-control">
-									<div class="more-ctrl-item set-as-read">设为已读</div>
-									<div class="more-ctrl-item delete-notice">删除</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pagination-wrapper">
-					<div class="m-pagination" data-pageTotal="12" data-pageIndex="1" data-pageSize="10"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="common-primary-mask notice-publish-box">
+	<div class="common-container">
+		<div class="container-header">
+			<span class="header-title-txt">发布通知</span>
+			<i class="x-close-btn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="container-body">
+			<div class="common-category">
+				<div class="left-box">
+					<span class="category-item active-category">发布通知</span>
+					<span class="category-item">历史记录</span>
+				</div>
+			</div>
+			<div class="body-content">
+				<div class="publish-box">
+					<div class="publish-title">
+						<span class="publish-title-txt">标题</span>
+						<input class=" publish-title-ipt" type="text" placeholder="请输入标题...">
+					</div>
+					<div class="notification-group">
+						<div class="notification-group-title">通知对象</div>
+						<div class="notification-group-wrapper">
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">全选</span>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+							<div class="group-item">
+								<input class="group-item-checkbox" type="checkbox" name="">
+								<span class="group-item-txt">测试群组1</span>
+								<div class="editor-icon">
+									<img src="./assets/images/edit-icon.png" alt="">
+								</div>
+							</div>
+						
+						</div>
+						<div class="toggle-unfold">收起</div>
+					</div>
+					<div class="publish-content-wrapper">
+						<div class="publish-content-txt">内容</div>
+						<textarea name="" id="" cols="30" rows="10" class="publish-content-ipt"></textarea>
+					</div>
+					<div class="publish-btn-wrapper">
+						<button class="button primary-btn">
+							<span>发布</span>
+						</button>
+					</div>
+				</div>
+				<div class="common-list">
+					<div class="common-u-list">
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									删除
+								</div>
+							</div>
+						</div>
+						
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									<span>更多</span>
+									<div class="more-control">
+										<div class="more-ctrl-item set-as-read">设为已读</div>
+										<div class="more-ctrl-item delete-notice">删除</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="u-item">
+							<i class="have-read-dot"></i>
+							<div class="item-title">
+								消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容
+							</div>
+							<div class="item-datetime">2021.11.12 10:59:59</div>
+							<div class="item-controller">
+								<span class="controller-item notice-check-btn">查看</span>
+								<div class="controller-item controller-item-more">
+									<span>更多</span>
+									<div class="more-control">
+										<div class="more-ctrl-item set-as-read">设为已读</div>
+										<div class="more-ctrl-item delete-notice">删除</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pagination-wrapper">
+						<div class="m-pagination" data-pageTotal="12" data-pageIndex="1" data-pageSize="10"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="common-primary-mask notice-detail-box">
 	<div class="common-container">
@@ -131,15 +305,82 @@
 					<p class="notice-detail-item notice-detail-datetime">通知时间：2021.11.23 23:59:59</p>
 					<p class="notice-detail-item notice-detail-department">通知单位：沃科教育局</p>
 					<div class="notice-content-detail">
-						消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消消息内容消息内容消息内容消息内容消
+						123123
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<div class="tips-tool-box-wrapper">
+	<div class="tips-tool-box">
+		<div class="tips-tool-box-header">
+			自定义学校群组
+			<i class="tips-tool-box-close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     class="feather feather-x">
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</i>
+		</div>
+		<div class="tips-tool-body">
+			<p class="custom-group-name">
+				<span>群组名</span>
+				<input type="text" class="custom-group-name-ipt" placeholder="请输入自定义群组名称">
+			</p>
+			<div class="custom-group-wrapper">
+				<p class="custom-group-wrapper-title">选择对象</p>
+				<div class="custom-group-list">
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+					<div class="custom-group-item" title="中国人民解放军战略支援部队信息工程大学">
+						<input type="checkbox" name="" class="custom-group-item-ipt">
+						<span class="custom-group-item-txt">中国人民解放军战略支援部队信息工程大学</span>
+					</div>
+				</div>
+			</div>
+			<div class="button-wrapper">
+				<button class="button primary-btn-min custom-check-btn">确认</button>
+			</div>
+		</div>
+	</div>
 </div>
-
 </body>
-
 </html>

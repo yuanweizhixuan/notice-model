@@ -1,124 +1,230 @@
-//通知列表 开始
-.notice-list-box {
-    display:none;
-    .common-u-list {
-        padding: 0.31rem 0.2rem 0 0.2rem;
-        flex: 1;
-        min-height: 5.2rem;
+//通知列表
+.notice-list-box, .notice-publish-box {
+    display: none;
 
-        .u-item {
-            margin: 0 0.05rem 0 0.15rem;
-            //padding: 0.09rem 0;
-            border-bottom: 1px solid #FFD194;
-            position: relative;
-            display: flex;
-            align-items: center;
-            color: #6a6a6a;
-            font-size: 0.14rem;
+    .common-list {
+        .common-u-list {
+            padding: 0.31rem 0.2rem 0 0.2rem;
+            flex: 1;
+            min-height: 5.2rem;
 
-            &:nth-child(n+2) {
-                margin-top: 0.15rem;
-            }
+            .u-item {
+                margin: 0 0.05rem 0 0.15rem;
+                //padding: 0.09rem 0;
+                border-bottom: 1px solid #FFD194;
+                position: relative;
+                display: flex;
+                align-items: center;
+                color: #6a6a6a;
+                font-size: 0.14rem;
 
-            .have-read-dot {
-
-                display: inline-block;
-                position: absolute;
-                left: -0.08rem;
-                top: 40%;
-                transformt: translateY(-50%);
-                border-radius: 50%;
-                width: 7px;
-                height: 7px;
-                background-color: #fa851c;
-            }
-
-            .item-title {
-                flex: 1;
-                padding: 0 0.2rem 0 0.04rem;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-
-            .item-datetime {
-                flex: 1;
-                padding: 0 0.2rem 0 0;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-
-            .item-controller {
-                width: max-content;
-                color: #2582FC;
-                cursor: pointer;
-                user-select: none;
-
-                .controller-item {
-                    display: inline-block;
-                    margin-left: 0.2rem;
+                &:nth-child(n+2) {
+                    margin-top: 0.15rem;
                 }
 
-                .controller-item-more {
-                    position: relative;
-                    padding: 0.07rem 0.07rem;
+                .have-read-dot {
 
-                    &:hover > .more-control {
-                        display: block;
+                    display: inline-block;
+                    position: absolute;
+                    left: -0.08rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 50%;
+                    width: 7px;
+                    height: 7px;
+                    background-color: #fa851c;
+                }
+
+                .item-title {
+                    flex: 1;
+                    padding: 0 0.2rem 0 0.04rem;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .item-datetime {
+                    flex: 1;
+                    padding: 0 0.2rem 0 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .item-controller {
+                    width: max-content;
+                    color: #2582FC;
+                    cursor: pointer;
+                    user-select: none;
+
+                    .controller-item {
+                        display: inline-block;
+                        margin-left: 0.2rem;
                     }
 
-                    .more-control {
-                        display: none;
-                        position: absolute;
-                        right: 100%;
-                        top: -0.07rem;
-                        z-index: 999;
-                        padding: 0rem 0.1rem;
-                        width: max-content;
-                        background-color: #fff;
-                        box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
-                        border-radius: 0.05rem;
+                    .controller-item-more {
+                        position: relative;
+                        padding: 0.07rem 0.07rem;
 
-                        &::after {
-                            position: absolute;
-                            right: -0.04rem;
-                            top: 0.17rem;
-                            content: '';
-                            width: 0.07rem;
-                            height: 0.07rem;
-                            background-color: #fff;
-                            border-right: 0.01rem solid rgba(0, 0, 0, 0.1);
-                            border-bottom: 0.01rem solid rgba(0, 0, 0, 0.1);
-                            transform: rotate(-45deg);
+                        &:hover > .more-control {
+                            display: block;
                         }
 
-                        .more-ctrl-item {
-                            padding: 0.12rem 0.14rem;
-                            text-align: center;
-                            color: #6A6A6A;
+                        .more-control {
+                            display: none;
+                            position: absolute;
+                            right: 100%;
+                            top: -0.07rem;
+                            z-index: 999;
+                            padding: 0 0.1rem;
+                            width: max-content;
+                            background-color: #fff;
+                            box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+                            border-radius: 0.05rem;
 
-                            &:hover {
-                                color: #2582FC;
+                            &::after {
+                                position: absolute;
+                                right: -0.04rem;
+                                top: 0.17rem;
+                                content: '';
+                                width: 0.07rem;
+                                height: 0.07rem;
+                                background-color: #fff;
+                                border-right: 0.01rem solid rgba(0, 0, 0, 0.1);
+                                border-bottom: 0.01rem solid rgba(0, 0, 0, 0.1);
+                                transform: rotate(-45deg);
                             }
 
-                            &:nth-child(1) {
-                                border-bottom: 1px solid #B2B2B2;
+                            .more-ctrl-item {
+                                padding: 0.12rem 0.14rem;
+                                text-align: center;
+                                color: #6A6A6A;
+
+                                &:hover {
+                                    color: #2582FC;
+                                }
+
+                                &:nth-child(1) {
+                                    border-bottom: 1px solid #B2B2B2;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
 
-    .pagination-wrapper {
-        padding: 0.24rem 0 0.09rem 0;
+        .pagination-wrapper {
+            padding: 0.24rem 0 0.09rem 0;
+        }
     }
 }
 
-//通知列表 结束
+// 发布
+.notice-publish-box {
+    .publish-box {
+        padding: 0.17rem 0.36rem 0.1rem 0.36rem;
 
+        .publish-title {
+            .publish-title-txt {
+                color: #333;
+                font-size: 0.14rem;
+            }
+
+            .publish-title-ipt {
+                margin-left: 0.18rem;
+                padding: 0.06rem 0.14rem;
+                width: 2.76rem;
+                height: 0.28rem;
+                outline: none;
+                color: #6A6A6A;
+                border: 1px solid #D5D5D5;
+                border-radius: 0.04rem;
+
+                &::placeholder {
+                    color: #6A6A6A;
+                }
+            }
+        }
+
+        .notification-group {
+            margin-top: 0.3rem;
+            position: relative;
+
+            .notification-group-title {
+            }
+
+            .notification-group-wrapper {
+                margin: 0.2rem 0.42rem 0 0.42rem;
+                display: flex;
+                flex-wrap: wrap;
+                height: 1.08rem;
+                overflow: hidden;
+                overflow-y: auto;
+
+                .group-item {
+                    flex: 0 0 25%;
+                    margin-bottom: 0.15rem;
+
+                    .group-item-checkbox {
+                        margin-right: 0.04rem;
+                    }
+
+                    .group-item-txt {
+                        user-select: none;
+                        cursor: pointer;
+                    }
+
+                    .editor-icon {
+                        display: inline-block;
+                        cursor: pointer;
+                        padding: 0.02rem 0.09rem;
+                    }
+                }
+            }
+
+            .toggle-unfold {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: #2582FC;
+            }
+        }
+
+        .publish-content-wrapper {
+            margin-top: 0.3rem;
+            display: flex;
+
+            .publish-content-txt {
+                font-size: 0.14rem;
+            }
+
+            .publish-content-ipt {
+                margin-left: 0.14rem;
+                resize: none;
+                border-radius: 0.04rem;
+                width: 9.54rem;
+                height: 2.67rem;
+                border: 1px solid #D5D5D5;
+                outline: none;
+                padding: 0.1rem 0.15rem;
+                color: #555;
+                line-height: 0.18rem;
+            }
+        }
+
+        .publish-btn-wrapper {
+            padding: 0.17rem 0 0.11rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .common-list {
+        display: none;
+    }
+}
 
 // 通知详情 开始
 .notice-detail-box {
@@ -127,7 +233,6 @@
     .detail-container {
         display: flex;
         flex-direction: column;
-        height: 6rem;
         padding: 0.1rem 0.3rem;
         overflow-y: auto;
         height: 6.4rem;
@@ -159,4 +264,130 @@
     }
 }
 
-// 通知详情 开始
+//自定义群组
+.tips-tool-box-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0.14rem;
+
+    .tips-tool-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 3.73rem;
+        //height: 2.73rem;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 0.05rem;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        .tips-tool-box-header {
+            position: relative;
+            height: 0.35rem;
+            width: 100%;
+            background-color: #FFBD39;
+            text-align: center;
+            line-height: 0.35rem;
+            color: #fff;
+
+            .tips-tool-box-close {
+                position: absolute;
+                right: 0.1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #FFFFFF;
+                font-style: normal;
+                cursor: pointer;
+                height: .35rem;
+
+                svg {
+                    width: 0.20rem;
+                    height: 0.20rem;
+                }
+            }
+        }
+
+        .tips-tool-body {
+            padding: 0.16rem 0.18rem;
+
+            .custom-group-name {
+                .custom-group-name-ipt {
+                    margin-left: 0.2rem;
+                    padding: 0.06rem 0.14rem;
+                    width: 1.93rem;
+                    height: 0.28rem;
+                    outline: none;
+                    color: #6A6A6A;
+                    border: 0.01rem solid #D5D5D5;
+                    border-radius: 0.04rem;
+                }
+            }
+
+            .custom-group-wrapper {
+                margin-top: 0.3rem;
+                display: flex;
+
+                .custom-group-wrapper-title {
+                    width: 0.6rem;
+                }
+
+                .custom-group-list {
+                    flex: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: 0.11rem;
+                    height: 1.3rem;
+                    overflow-y: auto;
+
+                    .custom-group-item {
+
+                        flex: 50%;
+                        margin-bottom: 0.16rem;
+                        padding-right: 0.05rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        .custom-group-item-txt {
+                            margin-left: 0.04rem;
+                        }
+                    }
+                }
+            }
+
+            .button-wrapper {
+                margin-top: 0.22rem;
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+    }
+}
+
+
+//按钮样式
+.button {
+    color: #fff;
+    background-color: #FA851C;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn {
+    padding: 0.15rem 0.6rem 0.12rem 0.6rem;
+    font-size: 0.18rem;
+    border-radius: 0.05rem;
+
+}
+
+.primary-btn-min {
+    width: 1.17rem;
+    height: 0.33rem;
+    background: #FA851C;
+    border-radius: 0.05rem;
+}

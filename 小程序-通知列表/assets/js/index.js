@@ -1,6 +1,6 @@
 $(function () {
-	let noticeWrapper = $(".notice-wrapper")
-	let navItemList = $(".notice-type-nav>.nav-item")
+	const noticeWrapper = $(".notice-wrapper")
+	const navItemList = $(".notice-type-nav>.nav-item")
 	let pageIndex = 0,		//分页码
 		pageSize = 20,      // 每页条数
 		loadEnded = false,   // 全部加载完成
@@ -43,11 +43,11 @@ $(function () {
 	 * 页面初始化时候调用
 	 */
 	function init() {
-		addLoadingAnimation(); //监听滚动事件
-		addScrollListener();
-		handleNavItemClick()
-		handleBackBtnClick()
-		handleNoticeItemClick()
+		addLoadingAnimation(); //添加动画
+		addScrollListener(); //监听滚动事件
+		handleNavItemClick() // 处理分类被点击
+		handleBackBtnClick() //返回上一页被点击
+		handleNoticeItemClick() // 每一条通知被点击
 	}
 
 	init()
@@ -83,7 +83,6 @@ $(function () {
 	 */
 	function handleBackBtnClick() {
 		$(".top-bar-left").on("click", function () {
-			//todo   返回按钮 点击
 			window.history.go(-1)
 		})
 

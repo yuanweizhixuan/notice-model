@@ -1,6 +1,6 @@
 $(function () {
-	let noticeId
-	let noticeBody = $(".notice-body")
+	let noticeId = ""
+	const noticeBody = $(".notice-body")
 
 	function init() {
 		handleBackBtnClick()
@@ -49,6 +49,4 @@ $(function () {
 		if (r != null) return unescape(r[2]);
 		return null; //返回参数值
 	}
-
-
 })
