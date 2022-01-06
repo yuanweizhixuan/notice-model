@@ -1,4 +1,5 @@
 $(function () {
+	const noDataStr = "<div class='no-data'>暂无内容</div>" // 没有内容时候 插入的字符串
 
 	$(".test").click(function () {
 		$(".notice-list-box").show()
@@ -15,6 +16,74 @@ $(function () {
 
 	/**  通知功能 */
 	const categoryList = $(".left-box>.category-item")
+	const noticeList = $(".common-u-list")
+
+
+	// 进入页面时候初始化内容
+	function init() {
+		renderSwitch();// 初始化 switch
+		initPagination() // 初始化分页器
+		initNotice() // 初始化通知列表
+		initCommonDialogMethods()  // 初始化dialog的各种功能
+		getNoticeListData() // 获取通知列表数据
+	}
+
+	init()
+
+
+	/****   网络请求 方法 开始 */
+
+	/**
+	 * 发送请求获取数据
+	 */
+	function getNoticeListData() {
+		$.ajax({
+			url: "../../json/all.json",
+			data: {},
+			type: "POST",
+			async: false,
+			dataType: "json",
+			success: function (data) {
+				generateNoticeListItem(data.list)
+			},
+		});
+	}
+
+	/**
+	 * 生成每一个通知
+	 * @param noticeListData 通知数组
+	 */
+	function generateNoticeListItem(noticeListData) {
+		let listItemStr = "" //每一个通知
+		let readStatus  // 已读状态
+		if (noticeListData.length === 0) {
+			noticeList.html(noDataStr)
+			return
+		}
+		$.each(noticeListData, function (i, item) {
+			readStatus = item.isReadStatus ? "none" : "block"
+			listItemStr += `
+			<div class="u-item">
+				<i class="have-read-dot" style="display: ${readStatus};"></i> 
+				<div class="item-title">${item.title}${i}</div>
+				<div class="item-datetime">${item.datetime}</div>
+				<div class="item-controller">
+					<span class="controller-item notice-check-btn">查看</span>
+					<div class="controller-item controller-item-more">
+						<span>更多</span>
+						<div class="more-control">
+							<div class="more-ctrl-item set-as-read">设为已读</div>
+							<div class="more-ctrl-item delete-notice">删除</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		`
+		})
+		noticeList.html(listItemStr)
+	}
+
+	/****   网络请求 方法 结束 */
 
 
 	/****   公共的dialog 方法 开始 */
@@ -27,20 +96,9 @@ $(function () {
 		$(".x-close-btn").on("click", function () {
 			$(this).parents(".common-primary-mask").hide();
 		})
-
 	}
 
 	/****   公共的dialog 方法  结束*/
-
-	function init() {
-		renderSwitch();
-		initPagination()
-		initNotice()
-		initCommonDialogMethods()
-	}
-
-	init()
-
 
 	/**  通知功能  开始*/
 	function initNotice() {
@@ -57,8 +115,9 @@ $(function () {
 	 * 设为已读按钮被点击
 	 */
 	function handleSetAsReadBtnClick() {
-		$(".common-u-list").on("click", ".set-as-read", function () {
+		noticeList.on("click", ".set-as-read", function () {
 			console.log($(this).parents(".u-item").children(".have-read-dot").hide());
+			console.log("设置为已读");
 		})
 	}
 
@@ -66,8 +125,9 @@ $(function () {
 	 * 删除通知按钮被点击
 	 */
 	function handleNoticeDeleteBtnClick() {
-		$(".common-u-list").on("click", ".delete-notice", function () {
+		noticeList.on("click", ".delete-notice", function () {
 			console.log($(this).parents(".u-item"));
+			console.log("删除");
 		})
 	}
 
@@ -75,8 +135,8 @@ $(function () {
 	 * 查看按钮被点击
 	 */
 	function handleNoticeCheckBtnClick() {
-		$(".common-u-list").on("click", ".notice-check-btn", function () {
-			console.log(12312)
+		noticeList.on("click", ".notice-check-btn", function () {
+			console.log("查看按钮被点击")
 			$(".notice-detail-box").show()
 		})
 	}
@@ -88,7 +148,7 @@ $(function () {
 	function handleSetAllReadMessageClick() {
 		$(".set-all-read").on("click", function () {
 			//todo
-			console.log(12312)
+			console.log('全部已读')
 		})
 	}
 
@@ -107,6 +167,9 @@ $(function () {
 	function handleCategoryItemClick() {
 		categoryList.on("click", function () {
 			$(this).addClass("active-category").siblings().removeClass("active-category")
+			console.log('分类被点击');
+			console.log($(this).text() === '全部信息');
+			console.log($(this).text() === "教育局消息")
 		})
 	}
 
@@ -127,6 +190,9 @@ $(function () {
 		jumpPage()
 	}
 
+	/**
+	 * 获取分页数据
+	 */
 	function getPaginationData() {
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageIndex") - 1)
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageSize"))
@@ -136,6 +202,7 @@ $(function () {
 		// $.ajax({
 		// 	url: "",
 		// 	data: {
+		//      checkAllMessage:
 		// 		pageIndex: paginationEl.attr("data-pageIndex"),
 		// 		pageSize: paginationEl.attr("data-pageSize"),
 		// 	},
@@ -156,7 +223,6 @@ $(function () {
 		}
 
 	}
-
 
 	/**
 	 * 生成页数  每次都会调用该方法 将最后的结果拼接到  pageNumStr 中  pageNumStr 在插入页面后会被复制为“”
@@ -393,6 +459,20 @@ function switchClick(_this) {
 		$(_this).attr("data-value", "true");
 		$(_this).children(".x-switch-core").addClass("is-check");
 	}
+	handleReadBtnClick(value)
 }
 
+/**
+ * 根据switch状态来请求数据，
+ * @param readStatus 全部信息还是未读信息
+ */
+function handleReadBtnClick(readStatus) {
+	if (readStatus) {
+		//todo 如果只读是被选中的
+		console.log("全部显示")
+		return
+	}
+	console.log("未读")
+	// todo 如果不是选中的只读
+}
 /** switch 结束 ***/

@@ -25,24 +25,46 @@ $(function () {
 	const customCloseBtn = $(".tips-tool-box-close")
 
 
-	/**   customCloseBtn */
-	handleCustomCloseBtnClick()
+	/****   公共的dialog 方法 开始 */
+	function initCommonDialogMethods() {
+		handleDialogCloseBtnClick()
+		handleCustomCloseBtnClick()
+		handleCustomOptionCheckBtnClick()
+	}
+
+
+	/**
+	 * dialog 关闭
+	 */
+	function handleDialogCloseBtnClick() {
+		$(".x-close-btn").on("click", function () {
+			$(this).parents(".common-primary-mask").hide();
+		})
+	}
+
+	/**   自定义群组  开始  */
+	/**
+	 * 自定义群组dialog 关闭
+	 */
 	function handleCustomCloseBtnClick() {
 		customCloseBtn.on("click", function () {
 			$(this).parents(".tips-tool-box-wrapper").hide()
 		})
 	}
 
-	/****   公共的dialog 方法 开始 */
-	function initCommonDialogMethods() {
-		handleDialogCloseBtnClick()
-	}
+	/**
+	 * 自定义群组确定按钮被点击
+	 */
+	function handleCustomOptionCheckBtnClick() {
+		$(".custom-check-btn").on("click", function () {
+			console.log("自定义群组确定按钮被点击")
+			//todo
+			customCloseBtn.click()
 
-	function handleDialogCloseBtnClick() {
-		$(".x-close-btn").on("click", function () {
-			$(this).parents(".common-primary-mask").hide();
 		})
 	}
+
+	/**   自定义群组  结束  */
 
 	/****   公共的dialog 方法  结束*/
 
@@ -67,6 +89,68 @@ $(function () {
 		handleNoticeCheckBtnClick()
 		handleSetAsReadBtnClick()
 		handleNoticeDeleteBtnClick()
+		editorCustomGroupBtnClick()
+		handleAddCustomGroupBtnClick()
+		handleGroupCheckAllClick()
+		handleGroupCheckIptClick()
+		handleToggleUnfoldBtnClick()
+	}
+
+	/**
+	 * 切换展开 收起功能
+	 */
+	function handleToggleUnfoldBtnClick() {
+		$(".toggle-unfold").on("click", function () {
+			if ($(this).text() === '收起') {
+				$(this).siblings(".notification-group-wrapper").hide()
+				$(this).text("展开")
+			} else {
+				$(this).siblings(".notification-group-wrapper").show()
+				$(this).text("收起")
+			}
+		})
+	}
+
+
+	/**
+	 * 全选或者全不选
+	 */
+	function handleGroupCheckAllClick() {
+		$(".publish-box").on("click", ".group-item-check-all", function () {
+			$(".group-item-check-ipt").prop("checked", $(this).prop("checked"));
+		})
+	}
+
+	/**
+	 * 每一个checkbox 被点击的时候检查是不是全选了
+	 */
+	function handleGroupCheckIptClick() {
+		$(".publish-box").on("click", ".group-item-check-ipt", function () {
+			if ($(".group-item-check-ipt:checked").length === $(".group-item-check-ipt").length) {
+				$(".group-item-check-all").prop("checked", true);
+			} else {
+				$(".group-item-check-all").prop("checked", false);
+			}
+		})
+	}
+
+
+	/**
+	 * 编辑用户群组按钮被点击 显示自定义群组对话框
+	 */
+	function editorCustomGroupBtnClick() {
+		$(".publish-box").on("click", ".editor-icon", function () {
+			$(".tips-tool-box-wrapper").show()
+		})
+	}
+
+	/**
+	 * 自定义添加按钮被点击
+	 */
+	function handleAddCustomGroupBtnClick() {
+		$(".publish-box").on("click", ".add-custom-group", function () {
+			$(".tips-tool-box-wrapper").show()
+		})
 	}
 
 

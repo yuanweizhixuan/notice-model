@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "title": "通知消息",
+      "datetime": "2021.11.121 10:59:59",
+      "isReadStatus": true
+    },
+    {
+      "title": "通知消息通知消消息",
+      "datetime": "2021.11.122 10:59:59",
+      "isReadStatus": false
+    },
+    {
+      "title": "通知消息通知消息通知消息息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息通知消息",
+      "datetime": "2021.11.123 10:59:59",
+      "isReadStatus": true
+    },
+    {
+      "title": "通知消息",
+      "datetime": "2021.11.124 10:59:59",
+      "isReadStatus": false
+    }
+  ]
+}
