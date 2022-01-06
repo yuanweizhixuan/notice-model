@@ -132,10 +132,15 @@ $(function () {
 	 */
 	function handlePublishBtnClick() {
 		$(".publish-btn").on("click", function () {
-			let title = $(".publish-title-ipt").val();
-			let publishContent = $(".publish-content-ipt").val()
-			let checkAll = $(".group-item-check-all").prop("checked")
+			const publishTitleEl = $(".publish-title-ipt")
+			const publishContentIpt = $(".publish-content-ipt")
+			const groupItemCheckAll = $(".group-item-check-all")
+			let title = publishTitleEl.val();
+			let publishContent = publishContentIpt.val()
+			let checkAll = groupItemCheckAll.prop("checked")
 			let publishGroupList = $(".group-item-check-ipt:checked")
+
+
 			console.log(publishGroupList, checkAll);
 			// todo
 			console.log("发布按钮被点击")
@@ -156,7 +161,6 @@ $(function () {
 				return ""
 			}
 
-
 			if (checkAll) {
 				// todo 如果全选被选择了
 				console.log("全选被打勾")
@@ -166,14 +170,13 @@ $(function () {
 					let list = []
 					list[list.length] = $(this).attr("data-group-id")
 				})
-
 			}
 			$(".group-item-check-ipt").each(function (i, item) {
 				$(this).prop("checked", false)
 			})
-			$(".group-item-check-all").prop("checked", false);
-			$(".publish-title-ipt").val("");
-			$(".publish-content-ipt").val("")
+			groupItemCheckAll.prop("checked", false);
+			publishTitleEl.val("");
+			publishContentIpt.val("")
 		})
 	}
 
@@ -303,7 +306,7 @@ $(function () {
 	}
 
 	function getPaginationData(payLoad) {
-		console.log(payLoad.container.parents(".common-list").children(".common-u-list").html(""), "payLoadpayLoadpayLoadpayLoad")
+		payLoad.container.parents(".common-list").children(".common-u-list").html("")
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageIndex") - 1)
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageSize"))
 		// payLoad.container.html('')
@@ -590,14 +593,15 @@ function switchClick(_this) {
 let toastTimer = null
 
 function toast(message, duration = 3000, callback) {
-	$(".common-toast-wrapper").remove()
+	const commonToastWrapper = $(".common-toast-wrapper")
+	commonToastWrapper.remove()
 	$("body").append("<div class='common-toast-wrapper'>" + message + "</div>")
 	if (toastTimer) {
 		clearTimeout(toastTimer)
 		toastTimer = null
 	}
 	toastTimer = setTimeout(function () {
-		$(".common-toast-wrapper").remove()
+		commonToastWrapper.remove()
 		if (callback instanceof Function) callback()
 		toastTimer = null
 	}, duration)
