@@ -28,8 +28,6 @@ $(function () {
 	/****   公共的dialog 方法 开始 */
 	function initCommonDialogMethods() {
 		handleDialogCloseBtnClick()
-		handleCustomCloseBtnClick()
-		handleCustomOptionCheckBtnClick()
 	}
 
 
@@ -42,7 +40,27 @@ $(function () {
 		})
 	}
 
+	/****   公共的dialog 方法  结束*/
+
+	/**
+	 *
+	 */
+	function init() {
+		renderSwitch();
+		initPagination()
+		initNotice()
+		initCommonDialogMethods()
+		initCustomGroup()
+	}
+
+	init()
+
 	/**   自定义群组  开始  */
+	function initCustomGroup() {
+		handleCustomCloseBtnClick()
+		handleCustomOptionCheckBtnClick()
+	}
+
 	/**
 	 * 自定义群组dialog 关闭
 	 */
@@ -66,20 +84,6 @@ $(function () {
 
 	/**   自定义群组  结束  */
 
-	/****   公共的dialog 方法  结束*/
-
-	/**
-	 *
-	 */
-	function init() {
-		renderSwitch();
-		initPagination()
-		initNotice()
-		initCommonDialogMethods()
-	}
-
-	init()
-
 
 	/**  通知功能  开始*/
 	function initNotice() {
@@ -94,6 +98,18 @@ $(function () {
 		handleGroupCheckAllClick()
 		handleGroupCheckIptClick()
 		handleToggleUnfoldBtnClick()
+		handlePublishBtnClick()
+		deletePublishHistoryBtnClick()
+	}
+
+
+	/**
+	 * 发布历史中的删除按钮被点击
+	 */
+	function deletePublishHistoryBtnClick() {
+		$(".delete-publish-history").on("click", function () {
+			console.log("delete button click");
+		})
 	}
 
 	/**
@@ -107,6 +123,50 @@ $(function () {
 			} else {
 				$(this).siblings(".notification-group-wrapper").show()
 				$(this).text("收起")
+			}
+		})
+	}
+
+	/**
+	 * 发布按钮被点击
+	 */
+	function handlePublishBtnClick() {
+		$(".publish-btn").on("click", function () {
+			let title = $(".publish-title-ipt").val();
+			let publishContent = $(".publish-content-ipt").val()
+			let checkAll = $(".group-item-check-all").prop("checked")
+			let publishGroupList = $(".group-item-check-ipt:checked")
+			console.log(publishGroupList, checkAll);
+			// todo
+			console.log("发布按钮被点击")
+
+			if (title === "") {
+				// todo  如果内容为空则给出提示
+				toast("通知标题不能为空")
+				return
+			}
+			if (publishGroupList.length === 0) {
+				// todo  如果内容为空则给出提示
+				toast("通知对象至少选择一个")
+				return ""
+			}
+			if (publishContent === "") {
+				// todo  如果内容为空则给出提示
+				toast("通知内容不能为空")
+				return ""
+			}
+
+
+			if (checkAll) {
+				// todo 如果全选被选择了
+				console.log("全选被打勾")
+			} else {
+				// todo 全选没有被选择
+				$.each(publishGroupList, function (i, item) {
+					let list = []
+					list[list.length] = $(this).attr("data-group-id")
+
+				})
 			}
 		})
 	}
@@ -236,9 +296,11 @@ $(function () {
 		jumpPage()
 	}
 
-	function getPaginationData() {
+	function getPaginationData(payLoad) {
+		console.log(payLoad.container.parents(".common-list").children(".common-u-list").html(""), "payLoadpayLoadpayLoadpayLoad")
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageIndex") - 1)
 		console.log('paginationEl.attr("data-pageIndex")', paginationEl.attr("data-pageSize"))
+		// payLoad.container.html('')
 
 		//todo 分页网络请求
 
@@ -436,7 +498,13 @@ $(function () {
 			generatePagination(_this)
 			_this.children(".m-p-ipt").val(pageIndex)
 			console.log("输入页码后点击跳转")
-			getPaginationData()
+
+			let pagination = {}
+			pagination.pageIndex = _this.attr("data-pageIndex") - 1
+			pagination.pageSize = _this.attr("data-pageSize")
+			pagination.container = _this
+
+			getPaginationData(pagination)
 		})
 	}
 
@@ -485,9 +553,7 @@ $(function () {
 		}
 	}
 
-
 });
-
 
 /**
  * switch 被点击 切换switch 状态和自定义属性的值
@@ -505,3 +571,31 @@ function switchClick(_this) {
 }
 
 /** switch 结束 ***/
+
+
+/** toast */
+
+/**
+ * 提示框 根据传入的参数提示相关内容
+ * @param message 需要显示的消息
+ * @param duration 延迟多少毫秒后隐藏  1s = 1000ms
+ * @param callback 回调函数
+ */
+let toastTimer = null
+
+function toast(message, duration = 3000, callback) {
+	$(".common-toast-wrapper").remove()
+	$("body").append("<div class='common-toast-wrapper'>" + message + "</div>")
+	if (toastTimer) {
+		clearTimeout(toastTimer)
+		toastTimer = null
+	}
+	toastTimer = setTimeout(function () {
+		$(".common-toast-wrapper").remove()
+		if (callback instanceof Function) callback()
+		toastTimer = null
+	}, duration)
+}
+
+/** toast */
+
