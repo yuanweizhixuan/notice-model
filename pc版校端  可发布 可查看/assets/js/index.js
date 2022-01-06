@@ -43,7 +43,7 @@ $(function () {
 	/****   公共的dialog 方法  结束*/
 
 	/**
-	 *
+	 *进入页面初始化时候调用一次
 	 */
 	function init() {
 		renderSwitch();
@@ -165,9 +165,15 @@ $(function () {
 				$.each(publishGroupList, function (i, item) {
 					let list = []
 					list[list.length] = $(this).attr("data-group-id")
-
 				})
+
 			}
+			$(".group-item-check-ipt").each(function (i, item) {
+				$(this).prop("checked", false)
+			})
+			$(".group-item-check-all").prop("checked", false);
+			$(".publish-title-ipt").val("");
+			$(".publish-content-ipt").val("")
 		})
 	}
 
